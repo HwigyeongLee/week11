@@ -22,6 +22,21 @@
 			display: flex;
 			overflow: hidden;
 		}
+		.ticker{position: absolute;overflow: hidden;}
+		#ticker1{
+			left: 0;top: 100vh;
+			width: 50vw;height: 5vh;
+			font-size: 2rem;line-height: 3.3rem;
+			background: lime;color: black;
+			transform-origin : 0 % 0 %;
+		}
+		#ticker2{
+			left: 50vw;top: 100vh;
+			width: 50vw;height: 5vh;
+			font-size: 2rem;line-height: 3.3rem;
+			background: black;color: white;
+			transform-origin : 0 % 0 %;
+		}
 		#container21{
 			background: transparent;
 			height: 100vh;
@@ -29,9 +44,9 @@
 			padding-top: 200px;
 			padding-left: 7vw;
 			padding-right: 7vw;
-			text-align: center;
 			font-family: 'Noto Sans KR', sans-serif;
 			color: white;
+			overflow: hidden;
 			text-shadow: #32a852 10px 0 20px;
 		}
 		#pointFont{
@@ -43,6 +58,8 @@
 			height: 100vh;
 			width: 50vw;
 			display: flex;
+			font-family: 'Noto Sans KR', sans-serif;
+			text-shadow: #32a852 10px 0 20px;
 
 		}
 		#top{padding-top: 50px;
@@ -61,14 +78,14 @@
 			height: 38.3632px;
 			}
 		#content{text-align: center;
-			padding-top: 30vh;
+			padding-top: 25vh;
 		}
 		#menubar{display: flex;
 			}
 		#albumTitle{font-family: 'DM Serif Display', serif;
 			color: white;
-			font-size: 250px;
-			line-height: 200px;
+			font-size: 400px;
+			line-height: 230px;
 			}
 		
 		 #ERROR{
@@ -131,7 +148,7 @@
 		}
 		
 		#errorIntro{color: white;
-			font-size: 30px;
+			font-size: 50px;
 			text-shadow: #32a852 1px 0 10px;
 			font-family: 'DM Serif Display', serif;
 		}
@@ -219,9 +236,9 @@
 		.album{position: absolute;
           display: block;
           transition: all 1s;}
-        .rat{width: 50px;
-			height: 20px;
+        .rat{
 			position: absolute;}
+
 	</style>
 	<title></title>
 </head>
@@ -261,16 +278,19 @@
 	<div id="container2">
 		<!-- <div id="about"><img src=""></div> -->
 		<div id="container21">
+			<div id="ticker1" class="ticker" data-speed="3" data-gap="480"><p><span>목격담 Siren 파노라마 Time! Stop! 당장 널 만나러 가지 않으면 마지막 인사 뭐가 부재중 전화 내 꿈의 성 A DAY 장례희망 </span></p></div>
 			<h1><span id="pointFont">ERROR</span></h1><br>
-			<p><span id="pointFont">AKMU</span> 이찬혁이 첫 솔로 정규 앨범 <span id="pointFont">[ERROR]</span>를 통해 아티스트로서 새로운 도전은 물론 자신만의 독창적 서사를 써내려간다.<br><br>
-			<span id="pointFont">[ERROR]</span>에 담긴 총 11곡은 하나의 이야기로 연결된다. 그 특유의 솔직한 감성과 철학적 사유, 유기적 구성이 돋보이는 가운데 삶에 대한 태도와 심리적 변화를 인상적으로 그려냈다.<br><br>
-	 		이야기는 어떤 사고(事故)로부터 시작된다. 이 과정에서 이찬혁은 과거에 대한 후회, 현재에 마주한 모순, 그리고 미래를 향한 욕망을 날 것 그대로 담아냈다.<br><br>
-			각 트랙은 곡마다 다른 감정과 스타일로 청자의 마음을 파고든다. 듣는 재미뿐 아닌 메시지 전달력이 커 깊은 울림을 선사하기 충분하다.<br><br>							
-			3번 트랙에 배치된 타이틀곡 <span id="pointFont">'Panorama'</span>가 극의 정점이며, 6번 트랙 '마지막 인사'는 청하의 피처링으로 앨범 전체를 환기함과 동시에 서사를 더한다.<br><br>
+			<p><span id="pointFont">AKMU</span> 이찬혁이 첫 솔로 정규 앨범 <span id="pointFont">[ERROR]</span>를 통해 아티스트로서 새로운 도전은 물론<br> 자신만의 독창적 서사를 써내려간다.<br><br>
+			<span id="pointFont">[ERROR]</span>에 담긴 총 11곡은 하나의 이야기로 연결된다. 그 특유의 솔직한 감성과 철학적<br> 사유, 유기적 구성이 돋보이는 가운데 삶에 대한 태도와 심리적 변화를 인상적으로 그려냈다.<br><br>
+	 		이야기는 어떤 사고(事故)로부터 시작된다. 이 과정에서 이찬혁은 과거에 대한 후회,<br> 현재에 마주한 모순, 그리고 미래를 향한 욕망을 날 것 그대로 담아냈다.<br><br>
+			각 트랙은 곡마다 다른 감정과 스타일로 청자의 마음을 파고든다. 듣는 재미뿐 아닌 메시지<br> 전달력이 커 깊은 울림을 선사하기 충분하다.<br><br>							
+			3번 트랙에 배치된 타이틀곡 <span id="pointFont">'Panorama'</span>가 극의 정점이며, 6번 트랙 '마지막 인사'는<br> 청하의 피처링으로 앨범 전체를 환기함과 동시에 서사를 더한다.<br><br>
  			꾸며지지 않은 최초의 감정을 가감 없이 풀어낸 솔로 아티스트 이찬혁의 행보가 기대된다.
  	
 		</div>
-		<div id="container22"></div>		
+		<div id="container22">
+			<div id="ticker2" class="ticker" data-speed="1" data-gap="480"><p><span>2022.10.17 6PM RELEASE 2022.10.17 6PM RELEASE 2022.10.17 6PM RELEASE </span></p></div>
+		</div>		
 	</div>
 	<audio> 
 	<script type="text/javascript">
@@ -291,11 +311,11 @@
                  //이미지쓸때
                  //t.style.background = "url(" + albumBack[i] + ")";
                  //t.style.backgroundSize = "cover";
-                 t.style.left = (sizeWidth + (i*albumW) + 960) + "px";
+                 t.style.left = (sizeWidth + (i*albumW) + 1000) + "px";
                  t.style.top = "105vh";
 
-                t.dataset.open =  albumW*(i+1) + 870 ;
-                t.dataset.close = (sizeWidth + (i*albumW) + 960);
+                t.dataset.open =  albumW*(i+1) + 860 ;
+                t.dataset.close = (sizeWidth + (i*albumW) + 1000);
                  t.onmouseover = function(e){
                          e.target.style.left = e.target.dataset.open + "px";
                  }
@@ -304,7 +324,7 @@
                  }
                  container22.appendChild(t);
            }
-        var timer = setInterval(ddd,100);
+        var timer = setInterval(ddd,500);
 		var t = 0;
 		
 		
@@ -329,15 +349,76 @@
 				let b = Math.random()*window.innerHeight - 50;
 				t.style.left = a + "px";
 				t.style.top = b + "px";
+				t.style.width = randomBH(0, 100) + "px";
+				t.style.height = randomBH(0,30) + "px";
 				container1.appendChild(t);
 				setTimeout(re,3000);
 				
 				function re(){
-					if(t <= 30){
+					if(t <= 40){
 					let a =document.getElementById("rat"+ t);
 					a.remove();
 					}
 				}}
+		function randomBH(min, max){
+				min = Math.ceil(min);
+				max = Math.floor(max);
+				return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+
+		bhTicker("ticker",2);
+
+function bhTicker(cl,speed) {
+	let t = document.getElementsByClassName(cl);
+	let ta = []; let ts=[]; let tg=[]; let tw=[];
+	let container,mover,text,textWidth;
+
+	for(let i=0; i<t.length; i++){
+		container = t[i];
+		mover = container.getElementsByTagName("p").item(0);
+		text = mover.getElementsByTagName("span").item(0);
+
+		mover.style.position = "absolute";
+		mover.style.margin = "0 0 0 0";
+		mover.style.left = "0px";
+		mover.leftPosition = 0;
+		mover.style.width = text.childNodes.item(0).length + "em";	// stretch width
+		textWidth = text.offsetWidth;
+
+		let speed2 = t[i].dataset.speed;
+		if (textWidth > container.offsetWidth) {
+			if(speed2 == 1){speed2 = 2};
+			mover.style.width = textWidth * speed2 + "px";
+			
+			for(let k=0;k<speed2;k++){
+				mover.innerHTML += mover.innerHTML;	
+			}
+		}
+
+		tw.push(textWidth);
+		tg.push(t[i].dataset.gap);
+		ts.push(t[i].dataset.speed);
+		ta.push(mover);
+	}
+
+	let tickerAction = function() {
+		for(let j=0;j<ta.length;j++){
+			let speed = parseInt(ts[j]);
+			let gap = parseInt(tg[j]);
+			let tw2 = tw[j];
+
+			if (ta[j].leftPosition * -speed > tw2*speed) {
+				ta[j].leftPosition = -speed;
+			} else {
+				ta[j].leftPosition -= speed;
+			}
+
+			ta[j].style.left = (-gap + ta[j].leftPosition) + "px";
+		}
+		window.requestAnimationFrame(tickerAction);
+	};
+	tickerAction();
+}
 
 		
 		
