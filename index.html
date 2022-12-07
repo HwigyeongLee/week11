@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Noto+Sans+KR:wght@300;500&family=Pinyon+Script&family=Rubik+Glitch&display=swap" rel="stylesheet">
+	<style type="text/css">
+		body{margin: 0;
+			padding: 0;
+			background: black;
+			overflow-x: hidden;
+			}
+		#container1{
+			height: 100vh;
+			width: 100vw;
+			background-image: url(glitchbackground.gif);
+			background-size: cover;}
+
+		#container2{
+			height: 100vh;
+			width: 100vw;
+			display: flex;
+			overflow: hidden;
+		}
+		#container21{
+			background: transparent;
+			height: 100vh;
+			width: 50vw;
+			padding-top: 200px;
+			padding-left: 7vw;
+			padding-right: 7vw;
+			text-align: center;
+			font-family: 'Noto Sans KR', sans-serif;
+			color: white;
+			text-shadow: #32a852 10px 0 20px;
+		}
+		#pointFont{
+			font-family: 'Rubik Glitch', cursive;
+
+		}
+		#container22{
+			background: transparent;
+			height: 100vh;
+			width: 50vw;
+			display: flex;
+
+		}
+		#top{padding-top: 50px;
+			padding-left: 30px;
+			padding-right: 30px;
+			display: flex;
+   			justify-content: space-between;
+		} 
+		.header {
+            width: calc(100% - 60px);
+            position: fixed;
+            z-index: 9999;
+        }
+		#logopng{position: relative;
+			width: 100px;
+			height: 38.3632px;
+			}
+		#content{text-align: center;
+			padding-top: 30vh;
+		}
+		#menubar{display: flex;
+			}
+		#albumTitle{font-family: 'DM Serif Display', serif;
+			color: white;
+			font-size: 250px;
+			line-height: 200px;
+			}
+		
+		 #ERROR{
+		   display: inline-block;
+		   animation: stretch 1.25s cubic-bezier(0.4, 1.4, 0.75, 0.9) infinite, blur 8s ease-in-out infinite alternate;
+		   transform-origin: center;
+		}
+		 #ERROR:nth-of-type(1) {
+		   animation-delay: 0.25s;
+		}
+		 #ERROR:nth-of-type(3) {
+		   animation-delay: 0.5s;
+		}
+		 #ERROR:nth-of-type(2) {
+		   animation-delay: 0.75s;
+		}
+		 #ERROR:nth-of-type(5) {
+		   animation-delay: 1s;
+		}
+		 #ERROR:nth-of-type(4) {
+		   animation-delay: 1.25s;
+		}
+		 @keyframes stretch {
+		   5% {
+		     transform: scaleX(10000) scaleY(0.02);
+		     opacity: 0;
+
+		  }
+		   6% {
+		     transform: scaleX(1) scaleY(1);
+		     opacity: 1;
+		  }
+		} 
+		@keyframes blur {
+		    0%,40%, 50%, 60%, 90%, 95%, 100%{
+		        text-shadow:
+		        0px 0px 10px rgba(255,255,255,1),
+		        0px 0px 5px rgba(255,255,255,0),
+		        0px 0px 10px rgba(255,255,255,0),
+		        0px 0px 15px rgba(50, 168, 82, 1),
+		        0px 0px 20px rgba(255,255,255,0);
+		    }
+		    45%, 75% {
+		    text-shadow:
+		        0px 0px 10px rgba(255,255,255,1),
+		        0px 0px 5px rgba(255,255,255,1),
+		        0px 0px 10px rgba(255,255,255,1),
+		        0px 0px 15px rgba(50, 168, 82, 1),
+		        0px 0px 20px rgba(255,255,255,1);
+		    }
+		    
+		    97.5% {
+		    text-shadow:
+		        0px 0px 10px rgba(255,255,255,0),
+		        0px 0px 5px rgba(255,255,255,0),
+		        0px 0px 10px rgba(255,255,255,0),
+		        0px 0px 4px rgba(50, 168, 82, 1),
+		        0px 0px 20px rgba(255,255,255,0);
+		    }
+		}
+		
+		#errorIntro{color: white;
+			font-size: 30px;
+			text-shadow: #32a852 1px 0 10px;
+			font-family: 'DM Serif Display', serif;
+		}
+		footer{font-family: 'Noto Sans KR', sans-serif;
+			font-size: 13px;
+			text-shadow: #32a852 1px 0 10px;
+			color: white;
+			position: fixed;
+			top: 95vh;
+			left: calc(50vw - 130px);}
+		span.star{vertical-align: middle;}
+
+		#rollingtext{color: white;
+			text-transform: uppercase;
+			font-family: 'Noto Sans KR', sans-serif;
+			text-shadow: #32a852 1px 0 10px;
+			font-weight: 500;
+			font-size: 17px;}
+			
+		.main{
+		  height:100vh;
+		  width:100%;  
+		  padding-left: 30px;
+		  padding-top: 18vh;
+		  display:flex;
+		}
+
+		#tracklist{
+			font-size: 25px;
+		}
+
+		.roller{
+		  height: 20rem;
+		  
+		  position: relative;
+		  overflow: hidden; 
+		  width: 600px;
+		  display: flex;
+		  color: white;
+		}
+
+
+		.roller #rolltext {
+		  position: absolute;
+		  top: 0;
+		  animation: slide 15s infinite;  
+		}
+
+		@keyframes slide {
+		   0%{
+		    top:0;
+		  }
+		  25%{
+		    top: -4rem;    
+		  }
+		  50%{
+		    top: -8rem;
+		  }
+		  75%{
+		    top: -12.25rem;
+		  }
+		}
+
+		@media screen and (max-width: 2000px){
+		  
+		  .roller{
+		  height: 8rem; 
+		  line-height: 2.125rem;  
+		  }
+		  
+		
+		  .roller #rolltext {  
+		  animation: slide-mob 15s infinite;  
+		}
+		  
+		  @keyframes slide-mob {
+		  0%{
+		    top:0;
+		  }
+		  81.81%{
+		  	top: -15.5rem;
+		  }
+		  
+		}
+		.album{position: absolute;
+          display: block;
+          transition: all 1s;}
+        .rat{width: 50px;
+			height: 20px;
+			position: absolute;}
+	</style>
+	<title></title>
+</head>
+<body>
+	<div id="container1" class="container">
+		<div class="header" id="top">
+        <p class="logo">
+            <!-- <a href="https://www.instagram.com/akmuchanhk/">
+                <img src="whiteLogo.png" id="logopng">
+            </a> -->
+    	</div>
+		<div id="content">
+
+			<h1 id="errorIntro">LEE CHANHYUK &nbsp;<span class="star">*</span>&nbsp; 1st SOLO ALBUM</h1>
+			<div id="albumTitle"><span id="ERROR">E</span><span id="ERROR">R</span><span id="ERROR">R</span><span id="ERROR">O</span><span id="ERROR">R</span></div>
+			<footer>ⓒ2022 Hwigyeong Lee. All rights reserved.</footer>
+		</div>
+				<div class="main">
+				  <div id="rollingtext"><p id="tracklist">TRACK LIST		<div class="roller">
+				    <span id="rolltext">
+				     01. 목격담<br>
+					 02. Siren<br>
+					 03. 파노라마<br>
+					 04. Time! Stop!<br>
+					 05. 당장 널 만나러 가지 않으면<br>
+					 06. 마지막 인사 (Feat. 청하)<br>
+					 07. 뭐가<br>
+					 08. 부재중 전화<br>
+					 09. 내 꿈의 성<br>
+					 10. A DAY<br>
+					 11. 장례희망
+					</span>
+				   </div>
+				   </div>
+				 </div>
+	</div>
+	<div id="container2">
+		<!-- <div id="about"><img src=""></div> -->
+		<div id="container21">
+			<h1><span id="pointFont">ERROR</span></h1><br>
+			<p><span id="pointFont">AKMU</span> 이찬혁이 첫 솔로 정규 앨범 <span id="pointFont">[ERROR]</span>를 통해 아티스트로서 새로운 도전은 물론 자신만의 독창적 서사를 써내려간다.<br><br>
+			<span id="pointFont">[ERROR]</span>에 담긴 총 11곡은 하나의 이야기로 연결된다. 그 특유의 솔직한 감성과 철학적 사유, 유기적 구성이 돋보이는 가운데 삶에 대한 태도와 심리적 변화를 인상적으로 그려냈다.<br><br>
+	 		이야기는 어떤 사고(事故)로부터 시작된다. 이 과정에서 이찬혁은 과거에 대한 후회, 현재에 마주한 모순, 그리고 미래를 향한 욕망을 날 것 그대로 담아냈다.<br><br>
+			각 트랙은 곡마다 다른 감정과 스타일로 청자의 마음을 파고든다. 듣는 재미뿐 아닌 메시지 전달력이 커 깊은 울림을 선사하기 충분하다.<br><br>							
+			3번 트랙에 배치된 타이틀곡 <span id="pointFont">'Panorama'</span>가 극의 정점이며, 6번 트랙 '마지막 인사'는 청하의 피처링으로 앨범 전체를 환기함과 동시에 서사를 더한다.<br><br>
+ 			꾸며지지 않은 최초의 감정을 가감 없이 풀어낸 솔로 아티스트 이찬혁의 행보가 기대된다.
+ 	
+		</div>
+		<div id="container22"></div>		
+	</div>
+	<audio> 
+	<script type="text/javascript">
+
+         let sizeWidth = 500;
+         let sizeHeight = 95;
+         let albumW = 30;
+
+         let albumBack = ["blue","red","purple","brown","blue","red","purple","brown","blue","red","purple"];
+        
+         for(let i=0; i<albumBack.length; i++){
+                 let t = document.createElement("img");
+                 t.className = "album";
+                 t.style.width = sizeHeight + "vh";
+                 t.style.height = sizeHeight + "vh";
+                 t.id = "al" + i;
+                 t.style.background = albumBack[i];
+                 //이미지쓸때
+                 //t.style.background = "url(" + albumBack[i] + ")";
+                 //t.style.backgroundSize = "cover";
+                 t.style.left = (sizeWidth + (i*albumW) + 960) + "px";
+                 t.style.top = "105vh";
+
+                t.dataset.open =  albumW*(i+1) + 870 ;
+                t.dataset.close = (sizeWidth + (i*albumW) + 960);
+                 t.onmouseover = function(e){
+                         e.target.style.left = e.target.dataset.open + "px";
+                 }
+                 t.onmouseout = function(e){
+                          e.target.style.left = e.target.dataset.close + "px";
+                 }
+                 container22.appendChild(t);
+           }
+        var timer = setInterval(ddd,100);
+		var t = 0;
+		
+		
+		function ddd(){
+			 	
+			 	
+		t++;
+		makeRat();
+		console.log(t);
+		if(t == 50){
+		clearInterval(timer);
+			 	}	
+			 }
+		function makeRat(){
+          var t = document.createElement("div");
+				t.className = "rat";
+				t.id = "rat" + t;
+				let randomOpacity = Math.floor(Math.random()*16777215).toString(16);
+				t.style.background = "#" + "ffffff";
+				t.style.opacity = randomOpacity
+				let a = Math.random()*window.innerWidth - 50;
+				let b = Math.random()*window.innerHeight - 50;
+				t.style.left = a + "px";
+				t.style.top = b + "px";
+				container1.appendChild(t);
+				setTimeout(re,3000);
+				
+				function re(){
+					if(t <= 30){
+					let a =document.getElementById("rat"+ t);
+					a.remove();
+					}
+				}}
+
+		
+		
+	</script>
+</body>
+</html>
